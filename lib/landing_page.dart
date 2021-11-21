@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 int currentIndex = 0;
 
@@ -64,7 +65,7 @@ class _LandingPageState extends State<LandingPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        padding:const  EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(20),
                         child: Row(
                           children: _buildIndicator(),
                         ),
@@ -74,7 +75,7 @@ class _LandingPageState extends State<LandingPage> {
                         child: MaterialButton(
                           height: 50,
                           minWidth: 50,
-                          padding:const  EdgeInsets.symmetric(horizontal: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
                           color: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
@@ -84,8 +85,7 @@ class _LandingPageState extends State<LandingPage> {
                             //     duration: Duration(milliseconds: 500),
                             //     curve: Curves.ease);
                             // setState(() {});
-                            Navigator.pop(context);
-                            Navigator.pushNamed(context, '/emailLogin');
+                            Get.offNamed('/emailLogin');
                           },
                           child: const Icon(
                             Icons.arrow_forward_ios,
@@ -140,10 +140,10 @@ class _LandingPageState extends State<LandingPage> {
 
 _indicator(bool isActive) {
   return AnimatedContainer(
-    duration:const Duration(milliseconds: 300),
+    duration: const Duration(milliseconds: 300),
     height: 6,
     width: isActive ? 50 : 10,
-    margin:const EdgeInsets.only(right: 5),
+    margin: const EdgeInsets.only(right: 5),
     decoration: BoxDecoration(
         color: isActive ? Colors.black : Colors.grey.shade500,
         borderRadius: BorderRadius.circular(5)),

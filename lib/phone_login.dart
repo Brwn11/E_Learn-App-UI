@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class EmailLogin extends StatefulWidget {
-  const EmailLogin({Key? key}) : super(key: key);
+class PhoneLogin extends StatefulWidget {
+  const PhoneLogin({Key? key}) : super(key: key);
 
   @override
-  _EmailLoginState createState() => _EmailLoginState();
+  _PhoneLoginState createState() => _PhoneLoginState();
 }
 
-class _EmailLoginState extends State<EmailLogin> {
+class _PhoneLoginState extends State<PhoneLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +91,7 @@ class _EmailLoginState extends State<EmailLogin> {
                     ),
                     Spacer(),
                     EmailIcon(
-                      image: 'assets/images/phone.png',
+                      image: 'assets/images/email.png',
                     ),
                     Spacer(),
                   ],
@@ -108,7 +108,7 @@ class _EmailLoginState extends State<EmailLogin> {
                         vertical: 10,
                       ),
                       child: Text(
-                        "Email",
+                        "Phone",
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -136,10 +136,10 @@ class _EmailLoginState extends State<EmailLogin> {
                         style: TextStyle(
                           color: Colors.white,
                         ),
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "tinoslearn@gmail.com",
+                          hintText: "8891103233",
                           hintStyle: TextStyle(
                             color: Colors.white,
                           ),
@@ -269,7 +269,7 @@ class _EmailLoginState extends State<EmailLogin> {
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child: const Text(
+                  child:const Text(
                     "Skip For Now",
                     style: TextStyle(
                       color: Colors.grey,
@@ -336,7 +336,7 @@ class EmailIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.offNamed('/phoneLogin');
+        Get.offNamed('/emailLogin');
       },
       child: Container(
         width: 100,
