@@ -12,6 +12,7 @@ dependencies:
   flutter_svg: ^0.23.0+1
   get: ^4.3.8
   flutter_signin_button: ^2.0.0
+  animate_do: ^2.0.0
 
 dev_dependencies:
   flutter_test:

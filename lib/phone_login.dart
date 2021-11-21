@@ -58,7 +58,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          ;
+                          null;
                         },
                         icon: const Icon(
                           Icons.arrow_back_ios,
@@ -244,7 +244,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    ;
+                    null;
                   },
                   child: const Text(
                     "Sign Up",
@@ -269,7 +269,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child:const Text(
+                  child: const Text(
                     "Skip For Now",
                     style: TextStyle(
                       color: Colors.grey,

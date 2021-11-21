@@ -58,7 +58,7 @@ class _EmailLoginState extends State<EmailLogin> {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          ;
+                          null;
                         },
                         icon: const Icon(
                           Icons.arrow_back_ios,
@@ -244,7 +244,7 @@ class _EmailLoginState extends State<EmailLogin> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    ;
+                    null;
                   },
                   child: const Text(
                     "Sign Up",
