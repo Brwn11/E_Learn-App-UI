@@ -1,67 +1,17 @@
-// ignore_for_file: unrelated_type_equality_checks
-// Package Imports
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:tinos_elearn/my_courses_screen.dart';
-import 'package:tinos_elearn/searchScreen/search_screen.dart';
-// File Imports
+import 'package:tinos_elearn/homeScreen/home_course_controller.dart';
+
 import 'course_icon.dart';
-import 'home_course_controller.dart';
-import 'home_screen.dart';
+import '../homeScreen/home_page.dart';
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-final homeController = Get.find<HomeCourseController>();
-void initState() {
-  homeController.initState();
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
   @override
+
   Widget build(BuildContext context) {
-    final homeController = Get.put(HomeCourseController());
-    return Scaffold(
-      bottomNavigationBar: GetBuilder<HomeCourseController>(
-        builder: (controller) => BottomNavyBar(
-          animationDuration: Duration(milliseconds: 1500),
-          backgroundColor: Color.fromRGBO(67, 66, 113, 1),
-          containerHeight: 60,
-          curve: Curves.fastLinearToSlowEaseIn,
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
-          itemCornerRadius: 20,
-          items: [
-            BottomNavyBarItem(
-              icon: const Icon(Icons.home),
-              title: const Text('Home'),
-              textAlign: TextAlign.center,
-              activeColor: Colors.white,
-              inactiveColor: Colors.grey,
-            ),
-            BottomNavyBarItem(
-              icon: const Icon(Icons.search),
-              title: Text('Search'),
-              textAlign: TextAlign.center,
-              activeColor: Colors.white,
-              inactiveColor: Colors.grey,
-            ),
-            BottomNavyBarItem(
-              icon: const Icon(Icons.person),
-              title: Text('My Learning'),
-              textAlign: TextAlign.center,
-              activeColor: Colors.white,
-              inactiveColor: Colors.grey,
-            ),
-          ],
-          onItemSelected: (index) {
-            controller.changePage(index);
-            print(homeController.currentPage);
-          },
-          selectedIndex: controller.currentPage.toInt(),
-        ),
-      ),
-      body: homeController.currentPage.toInt() == 0
-          ? SafeArea(
+    final homeController = Get.find<HomeCourseController>();
+    return SafeArea(
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
@@ -220,132 +170,6 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-            )
-          : SafeArea(
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/images/background2.jpg',
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                  // gradient: LinearGradient(
-                  //   begin: Alignment.topLeft,
-                ),
-              ),
-            ),
-    );
-  }
-}
-
-Widget courseWidget({
-  @required context,
-  @required image,
-  @required text,
-  @required person,
-  @required price,
-  @required firstButtonFunction,
-  @required secondButtonFunction,
-}) {
-  return Container(
-    width: MediaQuery.of(context).size.width,
-    height: 120,
-    decoration: const BoxDecoration(
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black12,
-          blurRadius: 10,
-          spreadRadius: 5,
-        ),
-      ],
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(0),
-        bottomLeft: Radius.circular(0),
-        topRight: Radius.circular(00),
-        bottomRight: Radius.circular(00),
-      ),
-      color: Color.fromRGBO(67, 66, 113, 0.4),
-    ),
-    child: Slidable(
-      closeOnScroll: true,
-      endActionPane: ActionPane(
-        motion: const StretchMotion(),
-        children: [
-          SlidableAction(
-            // flex: 2,
-            onPressed: firstButtonFunction,
-            backgroundColor: Colors.transparent,
-            foregroundColor: Colors.green,
-            icon: Icons.enhanced_encryption,
-            label: "Enroll",
-          ),
-          SlidableAction(
-            // flex: 1,
-            onPressed: secondButtonFunction,
-            backgroundColor: Colors.transparent,
-            foregroundColor: Colors.white,
-            icon: Icons.details_rounded,
-            label: 'Details',
-            // autoClose: true,
-          ),
-        ],
-      ),
-      direction: Axis.horizontal,
-      child: Row(
-        children: [
-          Image.asset(
-            image,
-            height: 100,
-            width: 200,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                text,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                person,
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 17,
-                ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                price,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    ),
-  );
-}
-
-Widget getScreen() {
-  if (homeController.currentPage == 0) {
-    return const HomeScreen();
-  } else if (homeController.currentPage == 1) {
-    return const SearchScreen();
-  } else {
-    return const MyCourses();
+            );
   }
 }
