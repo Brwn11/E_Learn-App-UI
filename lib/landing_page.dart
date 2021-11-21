@@ -64,7 +64,7 @@ class _LandingPageState extends State<LandingPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        padding: EdgeInsets.all(20),
+                        padding:const  EdgeInsets.all(20),
                         child: Row(
                           children: _buildIndicator(),
                         ),
@@ -74,7 +74,7 @@ class _LandingPageState extends State<LandingPage> {
                         child: MaterialButton(
                           height: 50,
                           minWidth: 50,
-                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          padding:const  EdgeInsets.symmetric(horizontal: 10),
                           color: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
@@ -140,10 +140,10 @@ class _LandingPageState extends State<LandingPage> {
 
 _indicator(bool isActive) {
   return AnimatedContainer(
-    duration: Duration(milliseconds: 300),
+    duration:const Duration(milliseconds: 300),
     height: 6,
     width: isActive ? 50 : 10,
-    margin: EdgeInsets.only(right: 5),
+    margin:const EdgeInsets.only(right: 5),
     decoration: BoxDecoration(
         color: isActive ? Colors.black : Colors.grey.shade500,
         borderRadius: BorderRadius.circular(5)),
@@ -159,6 +159,5 @@ List<Widget> _buildIndicator() {
       indicators.add(_indicator(false));
     }
   }
-
   return indicators;
 }
