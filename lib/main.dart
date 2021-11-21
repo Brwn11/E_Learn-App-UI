@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // Pages
 import 'landing_page.dart';
-import 'email_login_page.dart';
-import 'home_page.dart';
-import 'phone_login.dart';
+import 'authentication/email_login_page.dart';
+import 'homeScreen/home_page.dart';
+import 'authentication/phone_login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,10 +35,10 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/homePage',
-          page: () => const HomePage(),
+          page: () =>  HomePage(),
         ),
       ],
-      initialRoute: '/',
+      initialRoute: '/homePage',
     );
   }
 }

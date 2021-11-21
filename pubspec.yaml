@@ -13,6 +13,8 @@ dependencies:
   get: ^4.3.8
   flutter_signin_button: ^2.0.0
   animate_do: ^2.0.0
+  flutter_slidable: ^1.1.0
+  bottom_navy_bar: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -26,10 +28,10 @@ flutter:
     - assets/svg/
   #   - images/a_dot_ham.jpeg
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: EmailLoginPage
+      fonts:
+        - asset: fonts/SourceSansPro-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

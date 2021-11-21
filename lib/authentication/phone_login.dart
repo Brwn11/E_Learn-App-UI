@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:animate_do/animate_do.dart';
 
-class EmailLogin extends StatefulWidget {
-  const EmailLogin({Key? key}) : super(key: key);
+class PhoneLogin extends StatefulWidget {
+  const PhoneLogin({Key? key}) : super(key: key);
 
   @override
-  _EmailLoginState createState() => _EmailLoginState();
+  _PhoneLoginState createState() => _PhoneLoginState();
 }
 
-class _EmailLoginState extends State<EmailLogin> {
+class _PhoneLoginState extends State<PhoneLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,42 +39,44 @@ class _EmailLoginState extends State<EmailLogin> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 10,
+                  height: 50,
                 ),
                 Row(
-                  children: [
-                    const SizedBox(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:const [
+                     SizedBox(
                       width: 10,
                     ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 1,
-                        ),
-                      ),
-                      child: IconButton(
-                        onPressed: () {
-                          null;
-                        },
-                        icon: const Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
+                    // Container(
+                    //   width: 40,
+                    //   height: 40,
+                    //   decoration: BoxDecoration(
+                    //     color: Colors.transparent,
+                    //     borderRadius: BorderRadius.circular(10),
+                    //     border: Border.all(
+                    //       color: Colors.white,
+                    //       width: 1,
+                    //     ),
+                    //   ),
+                    //   child: IconButton(
+                    //     onPressed: () {
+                    //       null;
+                    //     },
+                    //     icon: const Icon(
+                    //       Icons.arrow_back_ios,
+                    //       color: Colors.white,
+                    //     ),
+                    //   ),
+                    // ),
+                     SizedBox(
                       width: 20,
                     ),
-                    const Text(
-                      "Login",
+                    Text(
+                      "Login To Tinos",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30,
+                        fontFamily: 'EmailLoginPage',
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -83,17 +86,17 @@ class _EmailLoginState extends State<EmailLogin> {
                   height: 20,
                 ),
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Spacer(),
                     GoogleIcon(
-                      image: 'assets/svg/google.svg',
+                      image: 'assets/svg/google2.svg',
                     ),
-                    Spacer(),
+                    SizedBox(
+                      width: 20,
+                    ),
                     EmailIcon(
-                      image: 'assets/images/phone.png',
+                      image: 'assets/images/email2.png',
                     ),
-                    Spacer(),
                   ],
                 ),
                 const SizedBox(
@@ -108,7 +111,7 @@ class _EmailLoginState extends State<EmailLogin> {
                         vertical: 10,
                       ),
                       child: Text(
-                        "Email",
+                        "Phone",
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -116,32 +119,36 @@ class _EmailLoginState extends State<EmailLogin> {
                     ),
                   ],
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width - 50,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 1,
+                FadeInUp(
+                  duration: const Duration(milliseconds: 1000),
+                  delay: const Duration(milliseconds: 500),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width - 50,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      // border: Border.all(
+                      // color: Colors.white,
+                      // width: 1,
+                      // ),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                      ),
-                      child: TextField(
-                        style: TextStyle(
-                          color: Colors.white,
+                    child: const Center(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 20,
                         ),
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "tinoslearn@gmail.com",
-                          hintStyle: TextStyle(
+                        child: TextField(
+                          style: TextStyle(
                             color: Colors.white,
+                          ),
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "8891103233",
+                            hintStyle: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -168,32 +175,36 @@ class _EmailLoginState extends State<EmailLogin> {
                     ),
                   ],
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width - 50,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 1,
+                FadeInUp(
+                  duration: const Duration(milliseconds: 1500),
+                  delay: const Duration(milliseconds: 500),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width - 50,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      // border: Border.all(
+                      //   color: Colors.white,
+                      //   width: 1,
+                      // ),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                      ),
-                      child: TextField(
-                        style: TextStyle(
-                          color: Colors.white,
+                    child: const Center(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 20,
                         ),
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "tinosLearn124",
-                          hintStyle: TextStyle(
+                        child: TextField(
+                          style: TextStyle(
                             color: Colors.white,
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "tinosLearn124",
+                            hintStyle: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -207,23 +218,34 @@ class _EmailLoginState extends State<EmailLogin> {
                   padding: const EdgeInsets.symmetric(
                     vertical: 10,
                   ),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width - 50,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      border: Border.all(
-                        color: Colors.grey,
-                        width: 1,
+                  child: FadeInUp(
+                    duration: const Duration(milliseconds: 2000),
+                    delay: const Duration(milliseconds: 1000),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        null;
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black,
+                        // border: Border.all(
+                        //   color: Colors.grey,
+                        //   width: 1,
+                        // ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        maximumSize: Size(
+                          MediaQuery.of(context).size.width - 50,
+                          60,
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
+                      child: const Center(
+                        child: Text(
+                          "Continue",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ),
@@ -298,24 +320,9 @@ class GoogleIcon extends StatelessWidget {
       onTap: () {
         Get.offNamed('/homePage');
       },
-      child: Container(
-        width: 100,
-        height: 60,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          border: Border.all(
-            color: Colors.grey,
-            width: 1,
-          ),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black,
-              blurRadius: 10,
-              offset: Offset(0, 10),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(10),
-        ),
+      child: CircleAvatar(
+        radius: 20,
+        backgroundColor: Colors.transparent,
         child: Center(
           child: SvgPicture.asset(
             image,
@@ -336,26 +343,11 @@ class EmailIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.offNamed('/phoneLogin');
+        Get.offNamed('/emailLogin');
       },
-      child: Container(
-        width: 100,
-        height: 60,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          border: Border.all(
-            color: Colors.grey,
-            width: 1,
-          ),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black,
-              blurRadius: 10,
-              offset: Offset(0, 10),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(10),
-        ),
+      child: CircleAvatar(
+        radius: 20,
+        backgroundColor: Colors.transparent,
         child: Center(
           child: Image.asset(
             image,

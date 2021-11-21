@@ -11,4 +11,10 @@ class HomeCourseController extends GetxController {
     courseId = 0.obs;
     update();
   }
+
+  var currentPage = 0.obs;
+  changePage(int page) {
+    currentPage = page.obs;
+    update();
+  }
 }
