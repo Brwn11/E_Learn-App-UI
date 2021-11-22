@@ -21,7 +21,7 @@ class _EmailLoginState extends State<EmailLogin> {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/images/background.jpg',
+                'assets/images/background2.jpg',
               ),
               fit: BoxFit.cover,
             ),
@@ -104,6 +104,11 @@ class _EmailLoginState extends State<EmailLogin> {
                 const SizedBox(
                   height: 30,
                 ),
+                MediaQuery.of(context).size.height > 800
+                    ? const Spacer()
+                    : const SizedBox(
+                        height: 10,
+                      ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: const [
@@ -149,7 +154,7 @@ class _EmailLoginState extends State<EmailLogin> {
                             border: InputBorder.none,
                             hintText: "tinoslearn@gmail.com",
                             hintStyle: TextStyle(
-                              color: Colors.white,
+                              color: Colors.grey,
                             ),
                           ),
                         ),
@@ -205,7 +210,7 @@ class _EmailLoginState extends State<EmailLogin> {
                             border: InputBorder.none,
                             hintText: "tinosLearn124",
                             hintStyle: TextStyle(
-                              color: Colors.white,
+                              color: Colors.grey,
                             ),
                           ),
                         ),
@@ -226,7 +231,7 @@ class _EmailLoginState extends State<EmailLogin> {
                     delay: const Duration(milliseconds: 1000),
                     child: ElevatedButton(
                       onPressed: () {
-                        null;
+                        Get.offNamed('/homePage');
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,
@@ -293,7 +298,9 @@ class _EmailLoginState extends State<EmailLogin> {
                   height: 20,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.offNamed('/homePage');
+                  },
                   child: const Text(
                     "Skip For Now",
                     style: TextStyle(
@@ -321,7 +328,7 @@ class GoogleIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.offNamed('/homePage');
+        null;
       },
       child: CircleAvatar(
         radius: 20,

@@ -1,8 +1,9 @@
 // Packages
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tinos_elearn/searchScreen/search_screen.dart';
 // Pages
+import 'package:tinos_elearn/searchScreen/search_screen.dart';
+import 'homePage2/home_page_2.dart';
 import 'landing_page.dart';
 import 'authentication/email_login_page.dart';
 import 'homeScreen/home_page.dart';
@@ -42,8 +43,12 @@ class MyApp extends StatelessWidget {
           name: '/searchScreen',
           page: () => const SearchScreen(),
         ),
+         GetPage(
+          name: '/homePage2',
+          page: () => const HomePage2(),
+        ),
       ],
-      initialRoute: '/homePage',
+      initialRoute: '/homePage2',
     );
   }
 }

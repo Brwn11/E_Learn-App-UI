@@ -175,7 +175,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFFC3A6),
+      backgroundColor: const Color.fromRGBO(67, 66, 113, 1),
       body: SizedBox(
         width: double.infinity,
         child: Column(
@@ -184,9 +184,9 @@ class _LandingPageState extends State<LandingPage> {
             const SizedBox(height: 50),
             FadeInRight(
               duration: const Duration(milliseconds: 1500),
-              child: Image.network(
-                'https://cdn.dribbble.com/users/115278/screenshots/16812737/media/93914b7224e59946c61b9dbde7542628.gif',
-                fit: BoxFit.cover,
+              child: Image.asset(
+                'assets/images/tinos_logo.png',
+                width: 300,
               ),
             ),
             FadeInUp(
@@ -196,17 +196,17 @@ class _LandingPageState extends State<LandingPage> {
                 padding: const EdgeInsets.only(
                     left: 50, top: 40, right: 20, bottom: 50),
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60),
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xffFFC3A6).withOpacity(0.5),
-                      offset: const Offset(0, -5),
-                      blurRadius: 20,
+                      color: Colors.black,
+                      offset: Offset(0, 4),
+                      blurRadius: 10,
                     ),
                   ],
                 ),
@@ -218,7 +218,7 @@ class _LandingPageState extends State<LandingPage> {
                       delay: const Duration(milliseconds: 1000),
                       from: 50,
                       child: const Text(
-                        'Learning Code is Easy',
+                        'Learning Code \nis now Easy',
                         // textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 24,
@@ -251,7 +251,7 @@ class _LandingPageState extends State<LandingPage> {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              Get.toNamed('/emailLogin');
+                              Get.offNamed('/emailLogin');
                             },
                             child: const Text(
                               "LOGIN",
@@ -271,7 +271,7 @@ class _LandingPageState extends State<LandingPage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Get.toNamed('/homePage');
+                              Get.offNamed('/homePage');
                             },
                             child: const Text(
                               'EXPLORE COURSES',
