@@ -11,21 +11,30 @@ import 'course_icon.dart';
 import 'home_course_controller.dart';
 import 'home_screen.dart';
 
-final homeController = Get.find<HomeCourseController>();
-void initState() {
-  homeController.initState();
+// final homeController = Get.find<HomeCourseController()>();
+final homeController = Get.put(HomeCourseController());
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    homeController.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final homeController = Get.put(HomeCourseController());
     return Scaffold(
       bottomNavigationBar: GetBuilder<HomeCourseController>(
         builder: (controller) => BottomNavyBar(
-          animationDuration: Duration(milliseconds: 1500),
-          backgroundColor: Color.fromRGBO(67, 66, 113, 1),
+          animationDuration: const Duration(milliseconds: 1500),
+          backgroundColor: const Color.fromRGBO(67, 66, 113, 1),
           containerHeight: 60,
           curve: Curves.fastLinearToSlowEaseIn,
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -40,14 +49,14 @@ class HomePage extends StatelessWidget {
             ),
             BottomNavyBarItem(
               icon: const Icon(Icons.search),
-              title: Text('Search'),
+              title: const Text('Search'),
               textAlign: TextAlign.center,
               activeColor: Colors.white,
               inactiveColor: Colors.grey,
             ),
             BottomNavyBarItem(
               icon: const Icon(Icons.person),
-              title: Text('My Learning'),
+              title: const Text('My Learning'),
               textAlign: TextAlign.center,
               activeColor: Colors.white,
               inactiveColor: Colors.grey,
@@ -60,183 +69,170 @@ class HomePage extends StatelessWidget {
           selectedIndex: controller.currentPage.toInt(),
         ),
       ),
-      body: homeController.currentPage.toInt() == 0
-          ? SafeArea(
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/images/background2.jpg',
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                  // gradient: LinearGradient(
-                  //   begin: Alignment.topLeft,
-                  //   end: Alignment.bottomRight,
-                  //   colors: [
-                  //     Color.fromRGBO(13, 12, 12, 1),
-                  //     Color.fromRGBO(67, 66, 113, 1)
-                  //   ],
-                  //   stops: [0.1, 0.9],
-                  // ),
-                ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              null;
-                            },
-                            icon: const Icon(
-                              Icons.menu,
-                              color: Colors.white,
-                            ),
-                          ),
-                          const Spacer(),
-                          GestureDetector(
-                            child: const CircleAvatar(
-                              radius: 30,
-                              backgroundImage: AssetImage(
-                                'assets/images/mbb.jpeg',
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 20,
-                            ),
-                            child: Text(
-                              "Featured Courses",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          courseIconWidget(
-                            text: "Cyber Security",
-                            onPressed: () {
-                              homeController.decrement();
-                            },
-                          ),
-                          courseIconWidget2(
-                            text: "Programming",
-                            onPressed: () {
-                              homeController.increment();
-                            },
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      courseWidget(
-                        context: context,
-                        image: 'assets/images/html.jpg',
-                        text: "Html Begginer to \nAdvanced Course",
-                        person: "Gourav",
-                        price: "\$ 30",
-                        firstButtonFunction: (context) {
-                          ;
-                        },
-                        secondButtonFunction: (context) {
-                          ;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      courseWidget(
-                        context: context,
-                        image: 'assets/images/react.png',
-                        text: "Learn React with Mosh",
-                        person: "Mosh Hamedani",
-                        price: "\$ 10",
-                        firstButtonFunction: (context) {
-                          ;
-                        },
-                        secondButtonFunction: (context) {
-                          ;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      courseWidget(
-                        context: context,
-                        image: 'assets/images/flutter2.png',
-                        text: "Learn Flutter \nwith Firebase",
-                        person: "Satoshi Nakomoto",
-                        price: "\$ 5",
-                        firstButtonFunction: (context) {
-                          ;
-                        },
-                        secondButtonFunction: (context) {
-                          ;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      courseWidget(
-                        context: context,
-                        image: 'assets/images/kali2.jpg',
-                        text: "Learn Kali Linux \nbasics",
-                        person: "Dalvi",
-                        price: "\$ 20",
-                        firstButtonFunction: (context) {
-                          ;
-                        },
-                        secondButtonFunction: (context) {
-                          ;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            )
-          : SafeArea(
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/images/background2.jpg',
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                  // gradient: LinearGradient(
-                  //   begin: Alignment.topLeft,
-                ),
-              ),
-            ),
+      body:
+          // SafeArea(
+          //         child: Container(
+          //           width: double.infinity,
+          //           height: double.infinity,
+          //           decoration: const BoxDecoration(
+          //             image: DecorationImage(
+          //               image: AssetImage(
+          //                 'assets/images/background2.jpg',
+          //               ),
+          //               fit: BoxFit.cover,
+          //             ),
+          //             // gradient: LinearGradient(
+          //             //   begin: Alignment.topLeft,
+          //             //   end: Alignment.bottomRight,
+          //             //   colors: [
+          //             //     Color.fromRGBO(13, 12, 12, 1),
+          //             //     Color.fromRGBO(67, 66, 113, 1)
+          //             //   ],
+          //             //   stops: [0.1, 0.9],
+          //             // ),
+          //           ),
+          //           child: SingleChildScrollView(
+          //             child: Column(
+          //               children: [
+          //                 const SizedBox(
+          //                   height: 20,
+          //                 ),
+          //                 Row(
+          //                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //                   children: [
+          //                     const SizedBox(
+          //                       width: 10,
+          //                     ),
+          //                     IconButton(
+          //                       onPressed: () {
+          //                         null;
+          //                       },
+          //                       icon: const Icon(
+          //                         Icons.menu,
+          //                         color: Colors.white,
+          //                       ),
+          //                     ),
+          //                     const Spacer(),
+          //                     GestureDetector(
+          //                       child: const CircleAvatar(
+          //                         radius: 30,
+          //                         backgroundImage: AssetImage(
+          //                           'assets/images/mbb.jpeg',
+          //                         ),
+          //                       ),
+          //                     ),
+          //                     const SizedBox(
+          //                       width: 10,
+          //                     ),
+          //                   ],
+          //                 ),
+          //                 Row(
+          //                   mainAxisAlignment: MainAxisAlignment.start,
+          //                   children: const [
+          //                     Padding(
+          //                       padding: EdgeInsets.symmetric(
+          //                         horizontal: 20,
+          //                         vertical: 20,
+          //                       ),
+          //                       child: Text(
+          //                         "Featured Courses",
+          //                         style: TextStyle(
+          //                           color: Colors.white,
+          //                           fontSize: 20,
+          //                         ),
+          //                       ),
+          //                     ),
+          //                   ],
+          //                 ),
+          //                 Row(
+          //                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //                   children: [
+          //                     courseIconWidget(
+          //                       text: "Cyber Security",
+          //                       onPressed: () {
+          //                         homeController.decrement();
+          //                       },
+          //                     ),
+          //                     courseIconWidget2(
+          //                       text: "Programming",
+          //                       onPressed: () {
+          //                         homeController.increment();
+          //                       },
+          //                     ),
+          //                   ],
+          //                 ),
+          //                 const SizedBox(
+          //                   height: 30,
+          //                 ),
+          //                 courseWidget(
+          //                   context: context,
+          //                   image: 'assets/images/html.jpg',
+          //                   text: "Html Begginer to \nAdvanced Course",
+          //                   person: "Gourav",
+          //                   price: "\$ 30",
+          //                   firstButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                   secondButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                 ),
+          //                 const SizedBox(
+          //                   height: 10,
+          //                 ),
+          //                 courseWidget(
+          //                   context: context,
+          //                   image: 'assets/images/react.png',
+          //                   text: "Learn React with Mosh",
+          //                   person: "Mosh Hamedani",
+          //                   price: "\$ 10",
+          //                   firstButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                   secondButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                 ),
+          //                 const SizedBox(
+          //                   height: 10,
+          //                 ),
+          //                 courseWidget(
+          //                   context: context,
+          //                   image: 'assets/images/flutter2.png',
+          //                   text: "Learn Flutter \nwith Firebase",
+          //                   person: "Satoshi Nakomoto",
+          //                   price: "\$ 5",
+          //                   firstButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                   secondButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                 ),
+          //                 const SizedBox(
+          //                   height: 10,
+          //                 ),
+          //                 courseWidget(
+          //                   context: context,
+          //                   image: 'assets/images/kali2.jpg',
+          //                   text: "Learn Kali Linux \nbasics",
+          //                   person: "Dalvi",
+          //                   price: "\$ 20",
+          //                   firstButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                   secondButtonFunction: (context) {
+          //                     ;
+          //                   },
+          //                 ),
+          //               ],
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          GetBuilder<HomeCourseController>(
+        builder: (controller) => getScreen(controller),
+      ),
     );
   }
 }
@@ -340,10 +336,10 @@ Widget courseWidget({
   );
 }
 
-Widget getScreen() {
-  if (homeController.currentPage == 0) {
+Widget getScreen(controller) {
+  if (controller.currentPage == 0) {
     return const HomeScreen();
-  } else if (homeController.currentPage == 1) {
+  } else if (controller.currentPage == 1) {
     return const SearchScreen();
   } else {
     return const MyCourses();

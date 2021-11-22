@@ -17,6 +17,7 @@ class HomeCourseController extends GetxController {
     currentPage = page.obs;
     update();
   }
+
   initState() {
     currentPage = 0.obs;
     update();

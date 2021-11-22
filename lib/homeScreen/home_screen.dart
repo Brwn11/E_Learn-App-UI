@@ -1,7 +1,8 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+// Files
 import 'package:tinos_elearn/homeScreen/home_course_controller.dart';
-
 import 'course_icon.dart';
 import '../homeScreen/home_page.dart';
 class HomeScreen extends StatelessWidget {
@@ -105,23 +106,30 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      courseWidget(
-                        context: context,
-                        image: 'assets/images/html.jpg',
-                        text: "Html Begginer to \nAdvanced Course",
-                        person: "Gourav",
-                        price: "\$ 30",
-                        firstButtonFunction: (context) {
-                          ;
-                        },
-                        secondButtonFunction: (context) {
-                          ;
-                        },
+                      FadeInUp(
+                        delay:const Duration(milliseconds: 500,),
+                        duration:const Duration(milliseconds: 1000,),
+                        child: courseWidget(
+                          context: context,
+                          image: 'assets/images/html.jpg',
+                          text: "Html Begginer to \nAdvanced Course",
+                          person: "Gourav",
+                          price: "\$ 30",
+                          firstButtonFunction: (context) {
+                            ;
+                          },
+                          secondButtonFunction: (context) {
+                            ;
+                          },
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      courseWidget(
+                      FadeInUp(
+                        delay:const Duration(milliseconds: 500,),
+                        duration:const Duration(milliseconds: 1500,),
+                        child: courseWidget(
                         context: context,
                         image: 'assets/images/react.png',
                         text: "Learn React with Mosh",
@@ -134,10 +142,14 @@ class HomeScreen extends StatelessWidget {
                           ;
                         },
                       ),
+                      ),
                       const SizedBox(
                         height: 10,
                       ),
-                      courseWidget(
+                      FadeInUp(
+                        delay:const  Duration(milliseconds: 500,),
+                        duration:const Duration(milliseconds: 2000,),
+                        child: courseWidget(
                         context: context,
                         image: 'assets/images/flutter2.png',
                         text: "Learn Flutter \nwith Firebase",
@@ -150,10 +162,14 @@ class HomeScreen extends StatelessWidget {
                           ;
                         },
                       ),
+                      ),
                       const SizedBox(
                         height: 10,
                       ),
-                      courseWidget(
+                      FadeInUp(
+                        delay:const Duration(milliseconds: 500,),
+                        duration:const  Duration(milliseconds: 2000,),
+                        child: courseWidget(
                         context: context,
                         image: 'assets/images/kali2.jpg',
                         text: "Learn Kali Linux \nbasics",
@@ -165,6 +181,7 @@ class HomeScreen extends StatelessWidget {
                         secondButtonFunction: (context) {
                           ;
                         },
+                      ),
                       ),
                     ],
                   ),
