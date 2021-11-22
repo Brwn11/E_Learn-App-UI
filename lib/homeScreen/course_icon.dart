@@ -15,6 +15,7 @@ Widget courseIconWidget({
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
+            // ignore: unrelated_type_equality_checks
             primary: controller.courseId == 0 ? Colors.white : Colors.black,
             minimumSize: const Size(
               100,
@@ -23,6 +24,7 @@ Widget courseIconWidget({
           ),
           child: Text(
             text,
+            // ignore: unrelated_type_equality_checks
             style: homeController.courseId == 0
                 ? const TextStyle(
                     color: Colors.black,
@@ -49,6 +51,7 @@ Widget courseIconWidget2({
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
+          // ignore: unrelated_type_equality_checks
           primary: controller.courseId == 1 ? Colors.white : Colors.black,
           minimumSize: const Size(
             100,
@@ -57,6 +60,7 @@ Widget courseIconWidget2({
         ),
         child: Text(
           text,
+          // ignore: unrelated_type_equality_checks
           style: homeController.courseId == 1
               ? const TextStyle(
                   color: Colors.black,

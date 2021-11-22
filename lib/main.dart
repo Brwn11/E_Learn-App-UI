@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/homePage',
-          page: () =>  HomePage(),
+          page: () => const HomePage(),
         ),
         GetPage(
           name: '/searchScreen',
-          page: () =>  SearchScreen(),
+          page: () => const SearchScreen(),
         ),
       ],
       initialRoute: '/homePage',

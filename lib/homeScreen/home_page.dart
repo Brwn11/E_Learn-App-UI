@@ -7,7 +7,6 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:tinos_elearn/my_courses_screen.dart';
 import 'package:tinos_elearn/searchScreen/search_screen.dart';
 // File Imports
-import 'course_icon.dart';
 import 'home_course_controller.dart';
 import 'home_screen.dart';
 
@@ -64,7 +63,7 @@ class _HomePageState extends State<HomePage> {
           ],
           onItemSelected: (index) {
             controller.changePage(index);
-            print(homeController.currentPage);
+            // print(homeController.currentPage);
           },
           selectedIndex: controller.currentPage.toInt(),
         ),

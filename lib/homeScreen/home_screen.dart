@@ -116,10 +116,10 @@ class HomeScreen extends StatelessWidget {
                           person: "Gourav",
                           price: "\$ 30",
                           firstButtonFunction: (context) {
-                            ;
+                            null;
                           },
                           secondButtonFunction: (context) {
-                            ;
+                            null;
                           },
                         ),
                       ),
@@ -136,10 +136,10 @@ class HomeScreen extends StatelessWidget {
                         person: "Mosh Hamedani",
                         price: "\$ 10",
                         firstButtonFunction: (context) {
-                          ;
+null;
                         },
                         secondButtonFunction: (context) {
-                          ;
+                          null;
                         },
                       ),
                       ),
@@ -156,10 +156,10 @@ class HomeScreen extends StatelessWidget {
                         person: "Satoshi Nakomoto",
                         price: "\$ 5",
                         firstButtonFunction: (context) {
-                          ;
+                          null;
                         },
                         secondButtonFunction: (context) {
-                          ;
+                          null;
                         },
                       ),
                       ),
@@ -176,10 +176,10 @@ class HomeScreen extends StatelessWidget {
                         person: "Dalvi",
                         price: "\$ 20",
                         firstButtonFunction: (context) {
-                          ;
+                          null;
                         },
                         secondButtonFunction: (context) {
-                          ;
+                          null;
                         },
                       ),
                       ),
