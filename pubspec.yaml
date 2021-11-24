@@ -36,6 +36,9 @@ flutter:
     - family: HomePage2Title
       fonts:
         - asset: fonts/Inter/static/Inter-Regular.ttf
+    - family: HomePage2MainFont
+      fonts:
+        - asset: fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
