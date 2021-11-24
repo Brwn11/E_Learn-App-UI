@@ -20,24 +20,26 @@ class _HeaderState extends State<Header> {
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
-                    height: 200,
-                    decoration: const BoxDecoration(
-                      color: Colors.teal,
-                      borderRadius: BorderRadius.vertical(
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: const BorderRadius.vertical(
                         bottom: Radius.circular(45),
                       ),
                       boxShadow: [
                         BoxShadow(
-                          blurRadius: 2,
+                          blurRadius: 1,
+                          color: Colors.black.withOpacity(0.1),
+                          offset: const Offset(0, 1),
                         ),
                       ],
                     ),
                     child: Column(
                       children: [
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Row(
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                               radius: 35,
                               backgroundColor: Colors.white70,
                               child: CircleAvatar(
@@ -47,51 +49,34 @@ class _HeaderState extends State<Header> {
                                 radius: 32,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Column(
-                              children: [
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
                                 Text(
-                                  "Millie Bobby Brown",
+                                  "Welcome Back",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: 26,
                                   ),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  decoration: BoxDecoration(
-                                    color: Colors.black54,
-                                    borderRadius: BorderRadius.circular(
-                                      5,
-                                    ),
-                                  ),
-                                  child: Text(
-                                    "Diamond Member",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                                Text(
+                                  "Brown",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
                                 ),
                               ],
                             ),
-                            Spacer(),
-                            Text(
-                              "154 \$ CAN",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
+                            const Spacer(),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],
@@ -101,22 +86,39 @@ class _HeaderState extends State<Header> {
                 child: Container(
                   height: 50,
                   width: size.width,
-                  child: Card(
-                    color: Colors.white,
-                    elevation: 3,
-                    margin: EdgeInsets.symmetric(
-                      horizontal: 50,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        labelText: "What are you hungry for ?",
-                        suffixIcon: Icon(Icons.search),
-                        contentPadding: EdgeInsets.only(
-                          left: 20,
+                  child: Center(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width - 150,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 7,
+                      ),
+                      child: const TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Search Courses",
+                          hintStyle: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 18,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.search,
+                            color: Colors.black,
+                          ),
+                          contentPadding: EdgeInsets.only(
+                            left: 20,
+                          ),
                         ),
                       ),
                     ),
