@@ -10,6 +10,7 @@ import 'package:tinos_elearn/my_courses_screen.dart';
 import 'home_course_controller.dart';
 import 'home_screen.dart';
 import '../homePage2/controller_initialize.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -29,8 +30,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       bottomNavigationBar: GetBuilder<HomeCourseController>(
         builder: (controller) => BottomNavyBar(
-          animationDuration: const Duration(milliseconds: 1500),
-          backgroundColor: const Color.fromRGBO(67, 66, 113, 1),
+          animationDuration: const Duration(
+            milliseconds: 1500,
+          ),
+          backgroundColor: const Color.fromRGBO(67, 66, 113, 1,),
           containerHeight: 60,
           curve: Curves.fastLinearToSlowEaseIn,
           // mainAxisAlignment: MainAxisAlignment.spaceAround,

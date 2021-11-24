@@ -3,6 +3,7 @@
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tinos_elearn/homePage2/profile_page/profile_page.dart';
 import 'package:tinos_elearn/homePage2/searchScreen/search_screen.dart';
 
 // File Imports
@@ -176,7 +177,7 @@ Widget getScreen(controller) {
   } else if (controller.homeScreen2CurrentPage == 1) {
     return const SearchScreen();
   } else {
-    return Container();
+    return const ProfilePage();
   }
 }
 // class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
