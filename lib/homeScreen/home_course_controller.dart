@@ -22,4 +22,9 @@ class HomeCourseController extends GetxController {
     currentPage = 0.obs;
     update();
   }
+  var homeScreen2CurrentPage = 0.obs;
+  changeHomePage2(int page) {
+    homeScreen2CurrentPage = page.obs;
+    update();
+  }
 }

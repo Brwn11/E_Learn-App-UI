@@ -83,7 +83,7 @@ class _HeaderState extends State<Header> {
               ),
               Positioned(
                 bottom: 0,
-                child: Container(
+                child: SizedBox(
                   height: 50,
                   width: size.width,
                   child: Center(

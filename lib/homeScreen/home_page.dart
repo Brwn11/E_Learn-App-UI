@@ -4,15 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:tinos_elearn/homePage2/searchScreen/search_screen.dart';
 import 'package:tinos_elearn/my_courses_screen.dart';
-import 'package:tinos_elearn/searchScreen/search_screen.dart';
 // File Imports
 import 'home_course_controller.dart';
 import 'home_screen.dart';
-
-// final homeController = Get.find<HomeCourseController()>();
-final homeController = Get.put(HomeCourseController());
-
+import '../homePage2/controller_initialize.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 

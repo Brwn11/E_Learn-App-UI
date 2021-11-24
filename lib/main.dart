@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // Pages
-import 'package:tinos_elearn/searchScreen/search_screen.dart';
 import 'homePage2/home_page_2.dart';
+import 'homePage2/searchScreen/search_screen.dart';
 import 'landing_page.dart';
 import 'authentication/email_login_page.dart';
 import 'homeScreen/home_page.dart';

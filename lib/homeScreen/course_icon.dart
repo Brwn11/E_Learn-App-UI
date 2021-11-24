@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'home_course_controller.dart';
-import 'home_page.dart';
+import '../homePage2/controller_initialize.dart';
 
 Widget courseIconWidget({
     @required onPressed,
