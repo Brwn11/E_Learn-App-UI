@@ -225,10 +225,10 @@ class _PhoneLoginState extends State<PhoneLogin> {
                   ),
                   child: FadeInUp(
                     duration: const Duration(milliseconds: 2000),
-                    delay: const Duration(milliseconds: 1000),
+                    delay: const Duration(milliseconds: 600),
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.offNamed('/homePage');
+                        Get.offNamed('/homePage2');
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,
@@ -296,7 +296,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.offNamed('/homePage');
+                    Get.offNamed('/homePage2');
                   },
                   child: const Text(
                     "Skip For Now",

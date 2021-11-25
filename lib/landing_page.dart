@@ -271,7 +271,7 @@ class _LandingPageState extends State<LandingPage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Get.offNamed('/homePage');
+                              Get.offNamed('/homePage2');
                             },
                             child: const Text(
                               'EXPLORE COURSES',

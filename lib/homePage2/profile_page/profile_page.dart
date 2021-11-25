@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -114,42 +112,43 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
+}
 
-  SizedBox profilePageIcon({
-    required BuildContext context,
-    required String text,
-    required var onTap,
-  }) {
-    return SizedBox(
-      height: 60,
-      width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: Colors.grey.shade900,
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const SizedBox(
-              width: 10,
+// Refactored Widget for Profile Page
+SizedBox profilePageIcon({
+  required BuildContext context,
+  required String text,
+  required var onTap,
+}) {
+  return SizedBox(
+    height: 60,
+    width: MediaQuery.of(context).size.width,
+    child: Card(
+      color: Colors.grey.shade900,
+      child: Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const SizedBox(
+            width: 10,
+          ),
+          Text(
+            text,
+            style: const TextStyle(
+              fontSize: 17,
+              color: Colors.white,
             ),
-            Text(
-              text,
-              style:const TextStyle(
-                fontSize: 17,
-                color: Colors.white,
-              ),
+          ),
+          const Spacer(),
+          IconButton(
+            onPressed: onTap,
+            icon: const Icon(
+              Icons.arrow_forward,
+              size: 30,
+              color: Colors.grey,
             ),
-            const Spacer(),
-            IconButton(
-              onPressed: onTap,
-              icon: const Icon(
-                Icons.arrow_forward,
-                size: 30,
-                color: Colors.grey,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
 }

@@ -6,7 +6,6 @@ import 'homePage2/home_page_2.dart';
 import 'homePage2/searchScreen/search_screen.dart';
 import 'landing_page.dart';
 import 'authentication/email_login_page.dart';
-import 'homeScreen/home_page.dart';
 import 'authentication/phone_login.dart';
 
 void main() {
@@ -35,10 +34,7 @@ class MyApp extends StatelessWidget {
           name: '/phoneLogin',
           page: () => const PhoneLogin(),
         ),
-        GetPage(
-          name: '/homePage',
-          page: () => const HomePage(),
-        ),
+        
         GetPage(
           name: '/searchScreen',
           page: () => const SearchScreen(),
@@ -48,7 +44,7 @@ class MyApp extends StatelessWidget {
           page: () => const HomePage2(),
         ),
       ],
-      initialRoute: '/homePage2',
+      initialRoute: '/',
     );
   }
 }

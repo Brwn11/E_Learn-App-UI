@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_page_2.dart';
+import 'text_style.dart';
 
 class HomeScreen2 extends StatelessWidget {
   const HomeScreen2({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class HomeScreen2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Removed temporarily , used for Hellow there text or intros
               // Padding(
               //   padding: const EdgeInsets.only(
               //     left: 10,
@@ -42,6 +44,7 @@ class HomeScreen2 extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
+                    // Displaying as row - the courses
                     const SizedBox(width: 10),
                     courseUi(
                       context: context,
