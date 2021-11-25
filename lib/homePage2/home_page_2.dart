@@ -60,7 +60,7 @@ class _HomePage2State extends State<HomePage2> {
             ),
             FlashyTabBarItem(
               icon: const Icon(Icons.person),
-              title: const Text('My Learning'),
+              title: const Text('My Account'),
               activeColor: Colors.white,
               inactiveColor: Colors.grey,
             ),
