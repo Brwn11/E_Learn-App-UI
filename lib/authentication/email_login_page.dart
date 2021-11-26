@@ -8,308 +8,287 @@ class EmailLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/images/background2.jpg',
+      backgroundColor: Colors.black,
+   resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 50,
             ),
-            fit: BoxFit.cover,
-          ),
-          // gradient: LinearGradient(
-          //   begin: Alignment.topLeft,
-          //   end: Alignment.bottomRight,
-          //   colors: [
-          //     Color.fromRGBO(13, 12, 12, 1),
-          //     Color.fromRGBO(67, 66, 113, 1)
-          //   ],
-          //   stops: [0.1, 0.9],
-          // ),
-        ),
-        child: SingleChildScrollView(
-          
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  SizedBox(
-                    width: 10,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                SizedBox(
+                  width: 10,
+                ),
+                // Container(
+                //   width: 40,
+                //   height: 40,
+                //   decoration: BoxDecoration(
+                //     color: Colors.transparent,
+                //     borderRadius: BorderRadius.circular(10),
+                //     border: Border.all(
+                //       color: Colors.white,
+                //       width: 1,
+                //     ),
+                //   ),
+                //   child: IconButton(
+                //     onPressed: () {
+                //       null;
+                //     },
+                //     icon: const Icon(
+                //       Icons.arrow_back_ios,
+                //       color: Colors.white,
+                //     ),
+                //   ),
+                // ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  "Login to Tinos",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontFamily: 'EmailLoginPage',
+                    fontWeight: FontWeight.bold,
                   ),
-                  // Container(
-                  //   width: 40,
-                  //   height: 40,
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.transparent,
-                  //     borderRadius: BorderRadius.circular(10),
-                  //     border: Border.all(
-                  //       color: Colors.white,
-                  //       width: 1,
-                  //     ),
-                  //   ),
-                  //   child: IconButton(
-                  //     onPressed: () {
-                  //       null;
-                  //     },
-                  //     icon: const Icon(
-                  //       Icons.arrow_back_ios,
-                  //       color: Colors.white,
-                  //     ),
-                  //   ),
-                  // ),
-                  SizedBox(
-                    width: 20,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                // Spacer(),
+                GoogleIcon(
+                  image: 'assets/svg/google2.svg',
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                EmailIcon(
+                  image: 'assets/images/phone2.png',
+                ),
+                // Spacer(),
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            MediaQuery.of(context).size.height > 800
+                ? const Spacer()
+                : const SizedBox(
+                    height: 10,
                   ),
-                  Text(
-                    "Login to Tinos",
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 10,
+                  ),
+                  child: Text(
+                    "Email",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
-                      fontFamily: 'EmailLoginPage',
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  // Spacer(),
-                  GoogleIcon(
-                    image: 'assets/svg/google2.svg',
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  EmailIcon(
-                    image: 'assets/images/phone2.png',
-                  ),
-                  // Spacer(),
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              MediaQuery.of(context).size.height > 800
-                  ? const Spacer()
-                  : const SizedBox(
-                      height: 10,
-                    ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  Padding(
+                ),
+              ],
+            ),
+            FadeInUp(
+              duration: const Duration(milliseconds: 1000),
+              delay: const Duration(milliseconds: 500),
+              child: Container(
+                width: MediaQuery.of(context).size.width - 50,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  // border: Border.all(
+                  //   color: Colors.white,
+                  //   width: 1,
+                  // ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Center(
+                  child: Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 10,
+                      horizontal: 20,
                     ),
-                    child: Text(
-                      "Email",
+                    child: TextField(
                       style: TextStyle(
                         color: Colors.white,
                       ),
-                    ),
-                  ),
-                ],
-              ),
-              FadeInUp(
-                duration: const Duration(milliseconds: 1000),
-                delay: const Duration(milliseconds: 500),
-                child: Container(
-                  width: MediaQuery.of(context).size.width - 50,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    // border: Border.all(
-                    //   color: Colors.white,
-                    //   width: 1,
-                    // ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                      ),
-                      child: TextField(
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "tinoslearn@gmail.com",
-                          hintStyle: TextStyle(
-                            color: Colors.grey,
-                          ),
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "tinoslearn@gmail.com",
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 10,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 10,
+                  ),
+                  child: Text(
+                    "Password",
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
-                    child: Text(
-                      "Password",
+                  ),
+                ),
+              ],
+            ),
+            FadeInUp(
+              duration: const Duration(milliseconds: 1500),
+              delay: const Duration(milliseconds: 500),
+              child: Container(
+                width: MediaQuery.of(context).size.width - 50,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  // border: Border.all(
+                  //   color: Colors.white,
+                  //   width: 1,
+                  // ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Center(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    child: TextField(
                       style: TextStyle(
                         color: Colors.white,
                       ),
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "tinosLearn124",
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
                     ),
                   ),
-                ],
+                ),
               ),
-              FadeInUp(
-                duration: const Duration(milliseconds: 1500),
-                delay: const Duration(milliseconds: 500),
-                child: Container(
-                  width: MediaQuery.of(context).size.width - 50,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20,
+                // horizontal: 20,
+              ),
+              child: FadeInUp(
+                duration: const Duration(milliseconds: 2000),
+                delay: const Duration(milliseconds: 600),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.offNamed('/homePage2');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.black,
                     // border: Border.all(
-                    //   color: Colors.white,
+                    //   color: Colors.grey,
                     //   width: 1,
                     // ),
-                    borderRadius: BorderRadius.circular(10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    maximumSize: Size(
+                      MediaQuery.of(context).size.width - 50,
+                      60,
+                    ),
                   ),
                   child: const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                      ),
-                      child: TextField(
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "tinosLearn124",
-                          hintStyle: TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
                       ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "Dont Have An Account ? ",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  // horizontal: 20,
-                ),
-                child: FadeInUp(
-                  duration: const Duration(milliseconds: 2000),
-                  delay: const Duration(milliseconds: 600),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Get.offNamed('/homePage2');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      // border: Border.all(
-                      //   color: Colors.grey,
-                      //   width: 1,
-                      // ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      maximumSize: Size(
-                        MediaQuery.of(context).size.width - 50,
-                        60,
-                      ),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                "Dont Have An Account ? ",
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () {
+                null;
+              },
+              child: const Text(
+                "Sign Up",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.grey,
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "OR",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
               ),
-              GestureDetector(
-                onTap: () {
-                  null;
-                },
-                child: const Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                "OR",
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.offNamed('/homePage2');
+              },
+              child: const Text(
+                "Skip For Now",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.grey,
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.offNamed('/homePage2');
-                },
-                child: const Text(
-                  "Skip For Now",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-            
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          
+          ],
         ),
       ),
     );

@@ -176,119 +176,121 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(67, 66, 113, 1),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const SizedBox(height: 50),
-            FadeInRight(
-              duration: const Duration(milliseconds: 1500),
-              child: Image.asset(
-                'assets/images/tinos_logo.png',
-                width: 300,
-              ),
-            ),
-            FadeInUp(
-              duration: const Duration(milliseconds: 1000),
-              delay: const Duration(milliseconds: 500),
-              child: Container(
-                padding: const EdgeInsets.only(
-                    left: 50, top: 40, right: 20, bottom: 50),
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(60),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black,
-                      offset: Offset(0, 4),
-                      blurRadius: 10,
-                    ),
-                  ],
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SizedBox(height: 50),
+              FadeInRight(
+                duration: const Duration(milliseconds: 1500),
+                child: Image.asset(
+                  'assets/images/tinos_logo.png',
+                  width: 300,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FadeInUp(
-                      duration: const Duration(milliseconds: 1000),
-                      delay: const Duration(milliseconds: 1000),
-                      from: 50,
-                      child: const Text(
-                        'Learning Code \nis now Easy',
-                        // textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
+              ),
+              FadeInUp(
+                duration: const Duration(milliseconds: 1000),
+                delay: const Duration(milliseconds: 500),
+                child: Container(
+                  padding: const EdgeInsets.only(
+                      left: 50, top: 40, right: 20, bottom: 50),
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(60),
+                      topRight: Radius.circular(60),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(0, 4),
+                        blurRadius: 10,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      FadeInUp(
+                        duration: const Duration(milliseconds: 1000),
+                        delay: const Duration(milliseconds: 1000),
+                        from: 50,
+                        child: const Text(
+                          'Learning Code \nis now Easy',
+                          // textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 15),
-                    // FadeInUp(
-                    //   duration: Duration(milliseconds: 1000),
-                    //   delay: Duration(milliseconds: 1000),
-                    //   from: 60,
-                    //   child: Text(
-                    //     'Stright from motherland ⛰',
-                    //     textAlign: TextAlign.center,
-                    //     style: TextStyle(
-                    //       fontSize: 14,
-                    //       color: Colors.grey.shade600,
-                    //     ),
-                    //   ),
-                    // ),
-                    const SizedBox(height: 20),
-                    FadeInUp(
-                      duration: const Duration(milliseconds: 1000),
-                      delay: const Duration(milliseconds: 1000),
-                      from: 70,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Get.offNamed('/emailLogin');
-                            },
-                            child: const Text(
-                              "LOGIN",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
+                      const SizedBox(height: 15),
+                      // FadeInUp(
+                      //   duration: Duration(milliseconds: 1000),
+                      //   delay: Duration(milliseconds: 1000),
+                      //   from: 60,
+                      //   child: Text(
+                      //     'Stright from motherland ⛰',
+                      //     textAlign: TextAlign.center,
+                      //     style: TextStyle(
+                      //       fontSize: 14,
+                      //       color: Colors.grey.shade600,
+                      //     ),
+                      //   ),
+                      // ),
+                      const SizedBox(height: 20),
+                      FadeInUp(
+                        duration: const Duration(milliseconds: 1000),
+                        delay: const Duration(milliseconds: 1000),
+                        from: 70,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Get.offNamed('/emailLogin');
+                              },
+                              child: const Text(
+                                "LOGIN",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                elevation: 10,
+                                minimumSize: const Size(100, 50),
+                                primary: Colors.black,
                               ),
                             ),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              elevation: 10,
-                              minimumSize: const Size(100, 50),
-                              primary: Colors.black,
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Get.offNamed('/homePage2');
-                            },
-                            child: const Text(
-                              'EXPLORE COURSES',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
+                            GestureDetector(
+                              onTap: () {
+                                Get.offNamed('/homePage2');
+                              },
+                              child: const Text(
+                                'EXPLORE COURSES',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
